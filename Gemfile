@@ -9,9 +9,9 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "popper_js", "~> 2.11.8"
-gem 'sassc-rails'
-gem 'json', '~> 2.6'
-gem 'image_processing', '~>1.2'
+gem "sassc-rails"
+gem "json", "~> 2.6"
+gem "image_processing", "~>1.2"
 
 gem "bootstrap", "~> 5.1.3"
 gem "devise"

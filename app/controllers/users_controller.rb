@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  allow_unauthenticated_access only: [:new, :create]
+  allow_unauthenticated_access only: [ :new, :create ]
 
   def new
     @user = User.new
@@ -33,7 +33,7 @@ end
 
   if @user != Current.user
     redirect_to user_path(Current.user), alert: "You cannot edit this user."
-    return
+    nil
   end
 end
 

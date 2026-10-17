@@ -19,7 +19,7 @@ def create
     else
       @books = Book.all
       render :index, status: :unprocessable_entity
-  end
+    end
 end
 
 def edit
@@ -27,7 +27,7 @@ def edit
 
   if @book.user != Current.user
     redirect_to books_path, alert: "You cannot edit this book."
-    return
+    nil
   end
 end
 
@@ -35,7 +35,7 @@ def update
   @book = Book.find(params[:id])
 
   if @book.update(book_params)
-    redirect_to book_path(@book), 
+    redirect_to book_path(@book),
     notice: "You have updated book successfully."
   else
     render :edit, status: :unprocessable_entity
