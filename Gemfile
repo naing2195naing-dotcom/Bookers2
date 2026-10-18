@@ -11,7 +11,7 @@ gem "jbuilder"
 gem "popper_js", "~> 2.11.8"
 gem "sassc-rails"
 gem "json", "~> 3.1"
-gem "image_processing", "~>1.2"
+gem "image_processing", "~>2.2"
 
 gem "bootstrap", "~> 5.1.3"
 gem "devise"
