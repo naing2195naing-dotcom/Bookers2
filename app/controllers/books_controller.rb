@@ -22,29 +22,38 @@ def create
     end
 end
 
+
 def edit
   @book = Book.find(params[:id])
 
   if @book.user != Current.user
     redirect_to books_path, alert: "You cannot edit this book."
-    nil
   end
 end
 
 def update
   @book = Book.find(params[:id])
 
+  if @book.user != Current.user
+    return redirect_to books_path, alert: "You cannot edit this book."
+  end
+
   if @book.update(book_params)
     redirect_to book_path(@book),
-    notice: "You have updated book successfully."
+                notice: "You have updated book successfully."
   else
     render :edit, status: :unprocessable_entity
   end
 end
 
 def destroy
-  book = Book.find(params[:id])
-  book.destroy
+  @book = Book.find(params[:id])
+
+  if @book.user != Current.user
+    return redirect_to books_path, alert: "You cannot delete this book."
+  end
+
+  @book.destroy
   redirect_to books_path
 end
 

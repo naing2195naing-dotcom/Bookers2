@@ -28,12 +28,11 @@ def show
   @book = Book.new
 end
 
-  def edit
+def edit
   @user = User.find(params[:id])
 
   if @user != Current.user
     redirect_to user_path(Current.user), alert: "You cannot edit this user."
-    nil
   end
 end
 
@@ -41,8 +40,7 @@ def update
   @user = User.find(params[:id])
 
   if @user != Current.user
-    redirect_to user_path(Current.user), alert: "You cannot edit this user."
-    return
+    return redirect_to user_path(Current.user), alert: "You cannot edit this user."
   end
 
   if @user.update(user_params)
