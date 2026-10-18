@@ -13,7 +13,7 @@ gem "sassc-rails"
 gem "json", "~> 3.1"
 gem "image_processing", "~>1.2"
 
-gem "bootstrap", "~> 5.1.3"
+gem "bootstrap", "~> 5.3.8"
 gem "devise"
 gem "mini_racer"
 gem "bcrypt", "~> 3.1.7"
